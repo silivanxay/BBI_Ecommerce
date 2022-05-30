@@ -7,14 +7,6 @@ This application enables Django powered websites to have multiple tenants via Po
     CREATE DATABASE 'bbi_ecomm'
 
 
-# Prerequisites
-    pip install psycopg2
-
-# Installation 
-Assuming you have django installed, the first step is to install django-tenants.
-        
-    pip install django-tenants
-
 Basic Settings
 You’ll have to make the following modifications to your settings.py file.
 
@@ -33,9 +25,6 @@ Your DATABASE_ENGINE setting needs to be changed to
             'POST': '5432'
         }
     }
-Suppose we have an app name 'tenent' and we want to create a model called Client.
-        
-    python manage.py startapp tenant
 
 Make migrations and Apply to database
 
