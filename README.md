@@ -50,6 +50,15 @@ Setup Initial User, Tenant and Admin
     python manage.py createsuperuser
     # Create the Public Schema
     python manage.py create_tenant
+        # example
+        schema name: public
+        user: 1
+        paid until:2022-12-31
+        on trial:False
+        is active: True
+        
     # Create the Administrator
     python manage.py create_tenant_superuser
+        # example
+        Enter Tenant Schema ('?' to list schemas): public
     python manage.py runserver

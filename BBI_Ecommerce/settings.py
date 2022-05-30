@@ -30,16 +30,13 @@ ALLOWED_HOSTS = []
 
 SHARED_APPS = (
     'django_tenants',  # mandatory
-    'tenant',
+    'tenant',  # you must list the app where your tenant model resides in
 
-    'django.contrib.contenttypes',
-
-    # everything below here is optional
-    'django.contrib.auth',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
 )
 
