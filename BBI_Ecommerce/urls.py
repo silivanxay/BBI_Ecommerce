@@ -18,6 +18,8 @@ from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import i18n as oscar_i18n
+from django.apps import apps
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
@@ -45,12 +47,15 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
+    path('i18n/', include(oscar_i18n)),
     path('cms/api/', api_router.urls),
+    path("ecomm/api/", include("oscarapi.urls")),
     path('admin/', admin.site.urls),
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('pages/', include(wagtail_urls) ),
-    path('', include(wagtail_urls)),
-    
+    # path('', include(wagtail_urls)),
+    path('', include(apps.get_app_config('oscar').urls[0])),
+
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
