@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,22 +34,60 @@ SHARED_APPS = (
     'django_tenants',  # mandatory
     'tenant',  # you must list the app where your tenant model resides in
 
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'wagtail.api.v2',
+
+    'taggit',
+    'modelcluster',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'drf_yasg',
 )
 
 
 TENANT_APPS = [
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'wagtail.api.v2',
+
+    'taggit',
+    'modelcluster',
+
     # The following Django contrib apps must be in TENANT_APPS
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    'rest_framework',
+    'drf_yasg',
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [
@@ -66,6 +106,8 @@ MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware',
 
     'BBI_Ecommerce.middleware.TenantMiddleware',
+
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'BBI_Ecommerce.urls'
@@ -156,3 +198,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TENANT_MODEL = "tenant.Tenant"
 
 TENANT_DOMAIN_MODEL = "tenant.Domain"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+WAGTAIL_SITE_NAME = 'My Shop'
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.database',
+    }
+}
