@@ -8,6 +8,10 @@ This application enables Django powered websites to have multiple tenants via Po
 
 
 Basic Settings
+Install dependencies
+
+    pip install -r requirements.txt
+
 You’ll have to make the following modifications to your settings.py file.
 
 Your DATABASE_ENGINE setting needs to be changed to
@@ -31,7 +35,7 @@ Make migrations and Apply to database
     # create migrations files
     python manage.py makemigrations
     # Apply migrations
-    python manage.py migrate_schemas
+    python manage.py migrate
 
 Setup Initial User, Tenant and Admin
         
@@ -45,9 +49,11 @@ Setup Initial User, Tenant and Admin
         paid until:2022-12-31
         on trial:False
         is active: True
+        domain: localhost
         
     # Create the Administrator
     python manage.py create_tenant_superuser
         # example
         Enter Tenant Schema ('?' to list schemas): public
+    # Runserver
     python manage.py runserver
