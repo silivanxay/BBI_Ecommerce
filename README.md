@@ -1,5 +1,5 @@
 # BBI_Ecommerce
-Bamboo BI Ecommerce
+### Bamboo BI Ecommerce
 
 This application enables Django powered websites to have multiple tenants via PostgreSQL schemas. A vital feature for every Software-as-a-Service website.
         
@@ -7,7 +7,11 @@ This application enables Django powered websites to have multiple tenants via Po
     CREATE DATABASE 'bbi_ecomm'
 
 
-Basic Settings
+### Basic Settings
+Install Dependencies
+
+    pip install -r requirements.txt
+
 You’ll have to make the following modifications to your settings.py file.
 
 Your DATABASE_ENGINE setting needs to be changed to
