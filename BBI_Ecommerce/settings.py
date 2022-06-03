@@ -137,6 +137,7 @@ TENANT_APPS = [
     'oscar.apps.dashboard.vouchers.apps.VouchersDashboardConfig',
     'oscar.apps.dashboard.communications.apps.CommunicationsDashboardConfig',
     'oscar.apps.dashboard.shipping.apps.ShippingDashboardConfig',
+    'oscarapi',
 
     # 3rd-party apps that oscar depends on
     'widget_tweaks',

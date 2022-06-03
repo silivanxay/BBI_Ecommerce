@@ -8,6 +8,11 @@ This application enables Django powered websites to have multiple tenants via Po
 
 
 ### Basic Settings
+Activate environment
+
+    python python3 -m venv
+    source venv/bin/activate
+
 Install dependencies
 
     pip install -r requirements.txt
@@ -34,6 +39,7 @@ Make migrations and Apply to database
 
     # create migrations files
     python manage.py makemigrations
+    python manage.py makemigrations tenant
     # Apply migrations
     python manage.py migrate
 
