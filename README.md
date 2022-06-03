@@ -10,7 +10,7 @@ This application enables Django powered websites to have multiple tenants via Po
 ### Basic Settings
 Activate environment
 
-    python -m venv  venv
+    python  -m venv  venv
     source venv/bin/activate
 
 Install dependencies
