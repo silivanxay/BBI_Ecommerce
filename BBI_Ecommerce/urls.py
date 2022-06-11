@@ -41,8 +41,10 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 
-    path("api/ecomm/", include("oscarapi.urls")),
+
     path('api/cms/', include('fiber.rest_api.urls')),
+    path("api/ecomm/", include("oscarapi.urls")),
+
     path('admin/fiber/', include('fiber.admin_urls')),
 
     path('', include(apps.get_app_config('oscar').urls[0])),
