@@ -41,7 +41,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 
-
+    path('api/uploadimage/', include('uploadimage.urls')),
     path('api/cms/', include('fiber.rest_api.urls')),
     path("api/ecomm/", include("oscarapi.urls")),
 

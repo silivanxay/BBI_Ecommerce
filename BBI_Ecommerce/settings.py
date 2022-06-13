@@ -95,6 +95,7 @@ SHARED_APPS = (
 
     'rest_framework',
     'drf_yasg',
+    'uploadimage',
 )
 
 
@@ -154,6 +155,7 @@ TENANT_APPS = [
 
     'rest_framework',
     'drf_yasg',
+    'uploadimage',
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [
@@ -261,6 +263,7 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
+OSCARAPI_OVERRIDE_MODULES = ["imageapi.customapi"]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
