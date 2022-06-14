@@ -23,6 +23,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from fiber.views import page
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -46,6 +48,7 @@ urlpatterns = [
     path("api/ecomm/", include("oscarapi.urls")),
 
     path('admin/fiber/', include('fiber.admin_urls')),
+    path('page/', page),
 
     path('', include(apps.get_app_config('oscar').urls[0])),
 

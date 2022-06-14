@@ -40,6 +40,9 @@ SHARED_APPS = (
     'django_tenants',  # mandatory
     'tenant',  # you must list the app where your tenant model resides in
 
+    'uploadimage',
+    'fiber',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,15 +94,17 @@ SHARED_APPS = (
 
     'mptt',
     'compressor',
-    'fiber',
+
 
     'rest_framework',
     'drf_yasg',
-    'uploadimage',
+
 )
 
 
 TENANT_APPS = [
+    'uploadimage',
+    'fiber',
     # The following Django contrib apps must be in TENANT_APPS
     'django.contrib.contenttypes',
     'django.contrib.auth',
@@ -151,11 +156,11 @@ TENANT_APPS = [
 
     'mptt',
     'compressor',
-    'fiber',
+
 
     'rest_framework',
     'drf_yasg',
-    'uploadimage',
+
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [
